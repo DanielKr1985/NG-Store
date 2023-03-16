@@ -1,7 +1,10 @@
 <div class="home">
   <div class="home__banner"></div>
-  <div class="home__products"></div>
-  <app-card></app-card>
+  <div class="home__products" *ngif="products.lenth"></div>
+  <div class="home__product" *ngFor="let product of products">
+    <app-card [product]="product"></app-card>
+  </div>
+
 </div>
 
 

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './components/card/card.component';
-import { HomeComponent } from '../home/components/home/home.component';
+import { MaterialModule } from '../material/material.module';
+
 
 
 
@@ -10,7 +11,7 @@ import { HomeComponent } from '../home/components/home/home.component';
     CardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,MaterialModule
   ],
   exports:[CardComponent],
 })
