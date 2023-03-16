@@ -10,7 +10,8 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 3.9,
     "count": 120
-  }
+  },
+  "star": ""
 },
  {
   "id": 2,
@@ -22,7 +23,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 4.1,
     "count": 259
-  }
+  },"star": ""
 },
 {
   "id": 3,
@@ -34,7 +35,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 4.7,
     "count": 500
-  }
+  },"star": ""
 },
 {
   "id": 4,
@@ -46,7 +47,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 2.1,
     "count": 430
-  }
+  },"star": ""
 },
 {
   "id": 5,
@@ -58,7 +59,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 4.6,
     "count": 400
-  }
+  },"star": ""
 },
 {
   "id": 6,
@@ -70,7 +71,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 3.9,
     "count": 70
-  }
+  },"star": ""
 },
 {
   "id": 7,
@@ -82,7 +83,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 3,
     "count": 400
-  }
+  },"star": ""
 },
 {
   "id": 8,
@@ -94,7 +95,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 1.9,
     "count": 100
-  }
+  },"star": ""
 },
 {
   "id": 9,
@@ -106,7 +107,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 3.3,
     "count": 203
-  }
+  },"star": ""
 },
 {
   "id": 10,
@@ -118,7 +119,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 2.9,
     "count": 470
-  }
+  },"star": ""
 },
 {
   "id": 11,
@@ -130,7 +131,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 4.8,
     "count": 319
-  }
+  },"star": ""
 },
 {
   "id": 12,
@@ -142,7 +143,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 4.8,
     "count": 400
-  }
+  },"star": ""
 },
 {
   "id": 13,
@@ -154,7 +155,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 2.9,
     "count": 250
-  }
+  },"star": ""
 },
 {
   "id": 14,
@@ -166,7 +167,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 2.2,
     "count": 140
-  }
+  },"star": ""
 },
 {
   "id": 15,
@@ -178,7 +179,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 2.6,
     "count": 235
-  }
+  },"star": ""
 },
 {
   "id": 16,
@@ -190,7 +191,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 2.9,
     "count": 340
-  }
+  },"star": ""
 },
 {
   "id": 17,
@@ -202,7 +203,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 3.8,
     "count": 679
-  }
+  },"star": ""
 },
 {
   "id": 18,
@@ -214,7 +215,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 4.7,
     "count": 130
-  }
+  },"star": ""
 },
 {
   "id": 19,
@@ -226,7 +227,7 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 4.5,
     "count": 146
-  }
+  },"star": ""
 },
 {
   "id": 20,
@@ -238,6 +239,6 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   "rating": {
     "rate": 3.6,
     "count": 145
-  }
+  },"star": ""
 }
 ];

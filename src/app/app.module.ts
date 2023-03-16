@@ -24,6 +24,7 @@ import { AdminModule } from './admin/admin.module';
     MaterialModule,
     HttpClientModule,
     AdminModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

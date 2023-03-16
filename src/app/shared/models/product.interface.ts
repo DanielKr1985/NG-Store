@@ -5,7 +5,8 @@ export interface IProduct{
   description:string;
   category:string;
   image:string;
-  rating:IRating
+  rating:IRating;
+  star:string;
 }
 
 export interface IRating{
