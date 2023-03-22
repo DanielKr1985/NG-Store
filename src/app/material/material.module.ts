@@ -22,7 +22,7 @@ const modules: Array<any> = [
   MatInputModule,
   MatSortModule,
   MatPaginatorModule,
-  MatMenuModule
+  MatMenuModule,
 ]
 
 @NgModule({

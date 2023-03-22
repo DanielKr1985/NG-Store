@@ -38,15 +38,24 @@ export class AdminComponent implements OnInit, AfterViewInit{
   }
 
   ngOnInit(){
-    this.productService.getProducts$().subscribe(data => {
-      console.log("all products from admin",data)
-      this.displayedColumns = Object.keys(data[0])
-      this.products=data;
-      this.dataTable = new MatTableDataSource<IProduct>(data);
+    this.productService.getProducts$().subscribe((data:any) => {
+
+      //this.displayedColumns = Object.keys(data[0])
+      this.displayedColumns = ['id', 'title', 'price', 'description','category','image','rating','star'];
+
+
+      this.products=data.products;
+      this.dataTable = new MatTableDataSource<IProduct>(data.products);
       if (this.sort)
       this.dataTable.sort = this.sort;
       if (this.paginator)
       this.dataTable.paginator = this.paginator;
+      if (this.contextMenu){
+        this.contextMenu.menuData = { 'element': Element };
+        this.contextMenu.openMenu();
+      }
+      if (this.contextMenu?.menu)
+        this.contextMenu.menu.focusFirstItem('mouse');
     })
 }
 
@@ -66,14 +75,5 @@ onContextMenu(event: MouseEvent, element: Element) {
   if (this.contextMenu?.menu)
     this.contextMenu.menu.focusFirstItem('mouse');
 }
-
-/* onContextMenuAction1('element': Element) {
-  alert(`Click on Action 1 for ${Element.title}`);
-}
-
-onContextMenuAction2('element': Element) {
-  alert(`Click on Action 2 for ${Element.category}`);
-} */
-
 
 }

@@ -4,12 +4,17 @@ export interface IProduct{
   price:number;
   description:string;
   category:string;
-  image:string;
-  rating:IRating;
+  images:[];
+  //rating:IRating;
+  rating:number;
   star:string;
+  brand:string;
+  stock:number;
+  thumbnail:string;
 }
 
 export interface IRating{
   rate:number;
   count:number;
 }
+

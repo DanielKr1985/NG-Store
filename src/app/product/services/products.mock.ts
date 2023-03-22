@@ -1,4 +1,4 @@
-import { IProduct } from "src/app/shared/models";
+/* import { IProduct } from "src/app/shared/models";
 
 export const PRODUCTS_MOCK:IProduct[] = [{
   "id": 1,
@@ -242,3 +242,4 @@ export const PRODUCTS_MOCK:IProduct[] = [{
   },"star": ""
 }
 ];
+ */
