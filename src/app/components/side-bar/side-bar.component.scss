@@ -1,0 +1,39 @@
+.sidebar{
+  width:400px;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  top:0;
+  left:-400px;
+  transition: 0.3s all ease;
+  z-index:2;
+  &--open{
+      left:0px;
+  }
+}
+
+.backdrop{
+  z-index:1;
+  background: rgba(17,17,17,0.4);
+  opacity:0;
+  pointer-events: none;;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top:0px;
+  left:0px;
+
+  &--open{
+    pointer-events: all;
+    opacity: 1;
+}
+}
+.sidebar_inner{
+  position: relative;
+
+}
+.homeButton{
+  background: url('/assets/icons8-home-page-24.png');
+  background-repeat: no-repeat;
+  position: relative;
+}

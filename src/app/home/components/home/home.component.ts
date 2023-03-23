@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit, OnDestroy{
   constructor(private productService: ProductService){}
 
     ngOnDestroy(): void {
-      throw new Error('Method not implemented.');
+      // throw new Error('Method not implemented.');
     }
 
     ngOnInit(){

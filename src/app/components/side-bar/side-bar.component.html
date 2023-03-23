@@ -1,0 +1,15 @@
+<div class="sidebar" [ngClass]="{'sidebar--open': isOpen}">
+  <div class="sidebar_inner">
+    <button mat-menu-item (click)="closeSidebar()"
+          [routerLink]="['']" routerLinkActive="router-link-active" >
+            <span class="homeButton">Home</span>
+    </button>
+    <button mat-menu-item (click)="closeSidebar()"
+          [routerLink]="['admin']" routerLinkActive="router-link-active" >
+            <span>Admin</span>
+    </button>
+  </div>
+</div>
+<div class="backdrop" (click)="closeSidebar()" [ngClass]="{'backdrop--open': isOpen}">
+  backDrop
+</div>

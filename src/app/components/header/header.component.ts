@@ -8,4 +8,13 @@ import { MaterialModule } from 'src/app/material/material.module';
 })
 export class HeaderComponent {
 
+  public sidebarOpen: boolean = false;
+
+  public openSidebar():void{
+    this.sidebarOpen=true;
+  }
+
+  public closeSidebar():void{
+    this.sidebarOpen=false;
+  }
 }
