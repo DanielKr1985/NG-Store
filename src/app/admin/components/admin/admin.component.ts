@@ -1,10 +1,14 @@
-import { Component,OnInit,AfterViewInit, ViewChild } from '@angular/core';
+import { DialogModule } from '@angular/cdk/dialog';
+import { Component,OnInit,AfterViewInit, ViewChild, Inject } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ProductService } from '../../../product/services/product.service';
 import { IProduct } from '../../../shared/models';
+import {MatDialog} from "@angular/material/dialog";
+import { ProductFormComponent } from 'src/app/shared/components/product-form/product-form.component';
+
 
 
 
@@ -24,11 +28,13 @@ export class AdminComponent implements OnInit, AfterViewInit{
 
   public products:IProduct[]=[];
 
+  public product?:IProduct;
+
   public dataTable=new MatTableDataSource<IProduct>();
 
   public displayedColumns: string[] = [];
 
-  constructor(private productService: ProductService){}
+  constructor(private productService: ProductService,public dialog: MatDialog){}
 
   ngAfterViewInit() {
     if (this.sort)
@@ -57,6 +63,7 @@ export class AdminComponent implements OnInit, AfterViewInit{
       if (this.contextMenu?.menu)
         this.contextMenu.menu.focusFirstItem('mouse');
     })
+    this.productService.fetchProducts();
 }
 
 applyFilter(event: Event) {
@@ -75,5 +82,11 @@ onContextMenu(event: MouseEvent, element: Element) {
   if (this.contextMenu?.menu)
     this.contextMenu.menu.focusFirstItem('mouse');
 }
+
+openDialog(): void {
+  const dialogRef = this.dialog.open(ProductFormComponent, {});
+}
+
+
 
 }
