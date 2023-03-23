@@ -22,5 +22,6 @@ export class HomeComponent implements OnInit, OnDestroy{
           console.log("all products",data.products)
           this.products=data.products;
         })
+        this.productService.fetchProducts();
     }
 }
