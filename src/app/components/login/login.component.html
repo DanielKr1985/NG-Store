@@ -1,0 +1,40 @@
+<div class="login">
+    <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
+      <div class="login_field">
+        <mat-form-field appearance="fill">
+          <mat-label>Input</mat-label>
+          <input
+          id="email"
+          type="email"
+          name="email"
+          matInput
+          placeholder="Ex.pat@example.com"
+          ngModel
+          >
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input
+          id="password"
+          type="password"
+          name="password"
+          matInput
+          ngModel
+          >
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Select</mat-label>
+          <mat-select [value]="selectedOption">
+            <mat-option value="user" >User</mat-option>
+            <mat-option value="admin">Admin</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="login_actions">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+</div>

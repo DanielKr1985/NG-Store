@@ -10,12 +10,15 @@ import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SideBarComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,9 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     SharedModule,
     MaterialModule,
     HttpClientModule,
-    AdminModule
+    AdminModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],
