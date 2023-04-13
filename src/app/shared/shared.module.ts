@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from './components/card/card.component';
 import { MaterialModule } from '../material/material.module';
 import { ProductFormComponent } from './components/product-form/product-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,7 @@ import { ProductFormComponent } from './components/product-form/product-form.com
     ProductFormComponent
   ],
   imports: [
-    CommonModule,MaterialModule
+    CommonModule,MaterialModule,FormsModule, ReactiveFormsModule
   ],
   exports:[CardComponent,ProductFormComponent],
 })

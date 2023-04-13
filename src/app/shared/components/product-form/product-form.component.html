@@ -1,8 +1,49 @@
 
-<div class="card" *ngIf="product1; else showText">
-  <p> {{product1.title}}</p>
-  <p> {{product1.id}}</p>
-  <p> {{product1.description}}</p>
+<div class="card" *ngIf="product ; else showText">
+  <!-- <p> {{product.title}}</p>
+  <p> {{product.id}}</p>
+  <p> {{product.description}}</p> -->
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>title</mat-label>
+      <input matInput formControlName="title" placeholder="title"><br>
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+      <mat-label>id</mat-label>
+      <input matInput formControlName="id" placeholder="id"><br>
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+      <mat-label>description</mat-label>
+      <input matInput description="description" placeholder="description"><br>
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+      <mat-label>price</mat-label>
+      <input matInput type="number" formControlName="price" placeholder="price"><br>
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+      <mat-label>Category</mat-label>
+      <select matNativeControl required>
+        <option value="smartphones">Smartphones</option>
+        <option value="skincare">Skincare</option>
+        <option value="fragrances">Fragrances</option>
+        <option value="laptops">Laptops</option>
+        <option value="groceries">Groceries</option>
+        <option value="home-decoration">Home-decoration</option>
+      </select>
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+      <mat-label>rating</mat-label>
+      <input matInput formControlName="rating" placeholder="rating"><br>
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+      <mat-label>brand</mat-label>
+      <input matInput formControlName="brand" placeholder="brand"><br>
+    </mat-form-field><br>
+
+    <br>
+    <button type="submit">Register</button>
+  </form>
+
 </div>
 
 <ng-template #showText>
@@ -10,4 +51,6 @@
     <h1>this is the product form</h1>
   </div>
 </ng-template>
+
+
 

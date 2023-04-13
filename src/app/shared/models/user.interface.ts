@@ -4,3 +4,8 @@ export interface Iuser{
   role:string;
 }
 
+export enum RolesEnum{
+  Admin = 'admin',
+  User = 'user',
+}
+
