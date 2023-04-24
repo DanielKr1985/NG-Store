@@ -8,6 +8,7 @@ import { ProductService } from '../../../product/services/product.service';
 import { IProduct } from '../../../shared/models';
 import {MatDialog} from "@angular/material/dialog";
 import { ProductFormComponent } from 'src/app/shared/components/product-form/product-form.component';
+import { Subscription } from 'rxjs';
 
 
 
@@ -33,6 +34,8 @@ export class AdminComponent implements OnInit, AfterViewInit{
   public dataTable=new MatTableDataSource<IProduct>();
 
   public displayedColumns: string[] = [];
+
+  private sub: Subscription = new Subscription();
 
   constructor(private productService: ProductService,public dialog: MatDialog){}
 
@@ -83,9 +86,18 @@ onContextMenu(event: MouseEvent, element: Element) {
     this.contextMenu.menu.focusFirstItem('mouse');
 }
 
-openDialog(): void {
+public openDialog(): void {
   const dialogRef = this.dialog.open(ProductFormComponent, {});
+  this.sub.add(
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+      console.log('The dialog was closed');
+      this.productService.addNewProduct(result);
+    })
+  );
 }
+
+
 
 
 

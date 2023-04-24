@@ -1,9 +1,9 @@
 
-<div class="card" *ngIf="product ; else showText">
+<div class="card" >
   <!-- <p> {{product.title}}</p>
   <p> {{product.id}}</p>
   <p> {{product.description}}</p> -->
-  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="productForm" (ngSubmit)="Submit()">
     <mat-form-field appearance="fill">
       <mat-label>title</mat-label>
       <input matInput formControlName="title" placeholder="title"><br>
@@ -22,7 +22,7 @@
     </mat-form-field><br>
     <mat-form-field appearance="fill">
       <mat-label>Category</mat-label>
-      <select matNativeControl required>
+      <select matNativeControl required formControlName="category">
         <option value="smartphones">Smartphones</option>
         <option value="skincare">Skincare</option>
         <option value="fragrances">Fragrances</option>
@@ -41,14 +41,14 @@
     </mat-form-field><br>
 
     <br>
-    <button type="submit">Register</button>
+    <button type="submit">Submit</button>
   </form>
 
 </div>
 
 <ng-template #showText>
   <div>
-    <h1>this is the product form</h1>
+    <h1>this is the product form aaaa</h1>
   </div>
 </ng-template>
 

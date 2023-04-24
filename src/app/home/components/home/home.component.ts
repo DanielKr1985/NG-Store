@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ProductService } from '../../../product/services/product.service';
 import { IProduct } from '../../../shared/models';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,10 @@ import { IProduct } from '../../../shared/models';
 export class HomeComponent implements OnInit, OnDestroy{
 
   public products:IProduct[]=[];
+
+  public isInCart(productId:number):Observable<boolean>{
+    return this.productService.isProductInCart(productId)
+  }
 
   constructor(private productService: ProductService){}
 
@@ -23,5 +28,13 @@ export class HomeComponent implements OnInit, OnDestroy{
           this.products=data.products;
         })
         this.productService.fetchProducts();
+    }
+
+    public addToCart(product:IProduct):void{
+      this.productService.addToCart(product);
+    }
+
+    public removeFromCart(product:IProduct):void{
+      this.productService.removeFromCart(product);
     }
 }

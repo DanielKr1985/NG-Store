@@ -36,4 +36,8 @@ ngOnDestroy(){
   this.sub.unsubscribe()
 }
 
+public onSubmit(product: IProduct) {
+  this.productService.onProductChange(product);
+}
+
 }

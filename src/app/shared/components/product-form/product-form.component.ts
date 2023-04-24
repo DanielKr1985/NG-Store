@@ -1,7 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Inject,Input,Output  } from '@angular/core';
 import { ProductService } from 'src/app/product/services/product.service';
 import { IProduct } from '../../models';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { AdminComponent } from 'src/app/admin/components/admin/admin.component';
 
 
 @Component({
@@ -21,7 +23,10 @@ export class ProductFormComponent {
     this._product=product;
   }
 
-  constructor(){
+  @Output() onSubmit: EventEmitter<IProduct> = new EventEmitter();
+
+  constructor(public dialogRef: MatDialogRef<ProductFormComponent>,
+    @Inject(MAT_DIALOG_DATA) public dialogData: IProduct){
     this.initForm(this.product);
   }
 
@@ -36,7 +41,9 @@ get product():IProduct{
   public productForm?: FormGroup ;
 
   ngOnInint(){
-
+    if (this.dialogData) {
+      this.product = this.dialogData;
+    }
 
       this.initForm(this.product);
 
@@ -49,6 +56,9 @@ get product():IProduct{
     this.productForm.patchValue({price:product.price});
     this.productForm.patchValue({rating:product.rating});
     this.productForm.patchValue({brand:product.brand});
+    this.productForm.patchValue({category:product.category});
+
+
   }
 
   public getControl(control: string): FormControl {
@@ -70,9 +80,19 @@ get product():IProduct{
 
   }
 
-  public onSubmit():void{
+  public Submit():void{
     if (this.productForm.valid){
-      console.log('submit');
+      this.product.title = this.productForm.value.title;
+      this.product.price = this.productForm.value.price;
+      //this.product.category = this.productForm.value.category
+      this.product.description = this.productForm.value.description;
+      this.product.rating = this.productForm.value.rating;
+      if (this.dialogRef) {
+        this.dialogRef.close(this.product);
+      } else {
+        this.onSubmit.emit(this.product);
+      }
+
     }
   }
 
